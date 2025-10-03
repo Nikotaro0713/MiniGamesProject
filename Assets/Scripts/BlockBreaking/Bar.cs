@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Bar : MonoBehaviour
+{
+    float posY;
+    void Start()
+    {
+        posY = transform.position.y;
+    }
+
+    void Update()
+    {
+        Vector3 pos = Input.mousePosition;
+        // zÇ10Ç…Ç∑ÇÈÇ±Ç∆Ç≈ÅAâúçsÇ´Çämï€
+        Vector3 targetPos = Camera.main.ScreenToWorldPoint(new Vector3(pos.x, pos.y, 10));
+        targetPos.x = Mathf.Clamp(targetPos.x, -1.6f, 1.6f);
+        targetPos.y = posY;
+        transform.position = targetPos;
+    }
+}
