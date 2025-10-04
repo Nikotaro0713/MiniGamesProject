@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    public bool isDead = false;
+
     void Start()
     {
         GetComponent<Rigidbody>().AddForce(new Vector3(100, -100, 0));
@@ -19,6 +21,11 @@ public class Ball : MonoBehaviour
         if(collision.gameObject.CompareTag("Block"))
         {
             Destroy(collision.gameObject);
+        }
+
+        if(collision.gameObject.name == "Wall_Bottom")
+        {
+            isDead = true;
         }
     }
 }
