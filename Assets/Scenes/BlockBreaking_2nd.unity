@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 311810175}
   m_Layer: 0
   m_Name: Wall_Left
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 391205552}
   m_Layer: 0
   m_Name: Wall_Top
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1074,7 +1074,7 @@ GameObject:
   - component: {fileID: 418846401}
   - component: {fileID: 418846400}
   m_Layer: 0
-  m_Name: CannonBase (1)
+  m_Name: RightLauncherPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1095,7 +1095,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1163,8 +1163,7 @@ Transform:
   m_LocalPosition: {x: 2.25, y: 1, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2002793388}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &458101739
@@ -1301,12 +1300,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317a4d52eee92a24ea509ad4ec211cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannon1: {fileID: 704688045}
-  cannon2: {fileID: 418846399}
-  ballPrefab: {fileID: 848778206649823631, guid: 23d132e5d287e334bbb0dd4e60d4789d,
-    type: 3}
-  speed: 0.001
-  spawnInterval: 10
+  leftLauncher: {fileID: 781438091}
+  rightLauncher: {fileID: 2002793392}
+  interval: 5
 --- !u!4 &492418154
 Transform:
   m_ObjectHideFlags: 0
@@ -1640,7 +1636,7 @@ GameObject:
   - component: {fileID: 562337981}
   m_Layer: 0
   m_Name: Wall_Bottom
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2062,7 +2058,7 @@ GameObject:
   - component: {fileID: 702681630}
   m_Layer: 0
   m_Name: Wall_Right
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2166,7 +2162,7 @@ GameObject:
   - component: {fileID: 704688047}
   - component: {fileID: 704688046}
   m_Layer: 0
-  m_Name: CannonBase
+  m_Name: LeftLauncherPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2187,7 +2183,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2255,8 +2251,7 @@ Transform:
   m_LocalPosition: {x: -2.3000002, y: 1, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 781438087}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &706954004
@@ -2376,8 +2371,9 @@ GameObject:
   - component: {fileID: 781438090}
   - component: {fileID: 781438089}
   - component: {fileID: 781438088}
+  - component: {fileID: 781438091}
   m_Layer: 0
-  m_Name: CannonMain
+  m_Name: LeftLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2391,13 +2387,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781438086}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.17364816, w: 0.9848078}
-  m_LocalPosition: {x: 0.600001, y: 0.30008948, z: 0}
-  m_LocalScale: {x: 1, y: 2.6666667, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: -2.12, y: 1.0900269, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.8000001, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 704688049}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!65 &781438088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2413,7 +2409,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2469,6 +2465,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781438086}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &781438091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781438086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eaaceb13ef37e54d955d2f7e5b72d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPrefab: {fileID: 848778206649823631, guid: 23d132e5d287e334bbb0dd4e60d4789d,
+    type: 3}
+  launchPoint: {fileID: 781438087}
+  launchDirection: {x: 1, y: -1, z: 0}
+  launchForce: 5
 --- !u!1 &787858123
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,8 +5256,9 @@ GameObject:
   - component: {fileID: 2002793391}
   - component: {fileID: 2002793390}
   - component: {fileID: 2002793389}
+  - component: {fileID: 2002793392}
   m_Layer: 0
-  m_Name: CannonMain
+  m_Name: RightLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5258,13 +5272,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002793387}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.17364825, w: 0.9848078}
-  m_LocalPosition: {x: -0.5, y: 0.30008948, z: 0}
-  m_LocalScale: {x: 1, y: 2.6666667, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 2.1, y: 1.0900269, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.8000001, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 418846403}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!65 &2002793389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5280,7 +5294,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5336,6 +5350,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002793387}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2002793392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002793387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eaaceb13ef37e54d955d2f7e5b72d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPrefab: {fileID: 848778206649823631, guid: 23d132e5d287e334bbb0dd4e60d4789d,
+    type: 3}
+  launchPoint: {fileID: 2002793388}
+  launchDirection: {x: -1, y: -1, z: 0}
+  launchForce: 5
 --- !u!1 &2013425058
 GameObject:
   m_ObjectHideFlags: 0
@@ -5750,6 +5781,8 @@ SceneRoots:
   - {fileID: 787858127}
   - {fileID: 1317682694}
   - {fileID: 250705158}
+  - {fileID: 781438087}
   - {fileID: 704688049}
+  - {fileID: 2002793388}
   - {fileID: 418846403}
   - {fileID: 492418154}
