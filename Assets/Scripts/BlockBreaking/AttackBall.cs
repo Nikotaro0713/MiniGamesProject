@@ -38,7 +38,8 @@ public class AttackBall : MonoBehaviour
         if (collision.gameObject.name == "Wall_Bottom")
         {
             Destroy(this.gameObject);
-            // プレイヤーのHPを減らす処理を記述
+            // プレイヤーのHPを減らす
+            HpManager.Instance.TakeDamage(10);
         }
 
         if(collision.gameObject.name == "Wall_Top")
