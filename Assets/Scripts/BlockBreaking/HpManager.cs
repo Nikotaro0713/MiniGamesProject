@@ -7,10 +7,15 @@ public class HpManager : MonoBehaviour
 {
     public static HpManager Instance;
 
-    public int maxHP = 100;
-    public int currentHP;
+    [SerializeField] private int maxHP = 100;
+    [SerializeField] private int currentHP;
 
     public Slider hpSlider;
+
+    public int GetHP
+    {
+        get { return currentHP; }
+    }
 
     private void Awake()
     {
@@ -39,9 +44,6 @@ public class HpManager : MonoBehaviour
     
     void Update()
     {
-        if(currentHP < 0)
-        {
-            Time.timeScale = 0;
-        }
+        
     }
 }

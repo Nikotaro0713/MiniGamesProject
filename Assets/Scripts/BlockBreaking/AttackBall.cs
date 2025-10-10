@@ -44,7 +44,7 @@ public class AttackBall : MonoBehaviour
 
         if(collision.gameObject.name == "Wall_Top")
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
             // エネミーのHPを減らす処理を記述
         }
 
