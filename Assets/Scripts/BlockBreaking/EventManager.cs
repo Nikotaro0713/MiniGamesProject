@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EventManager : MonoBehaviour
@@ -11,16 +12,26 @@ public class EventManager : MonoBehaviour
     public HpManager hpManager;
     public GameObject nextButton;
     public SceneSwitcher sceneSwitcher;
+    private bool isStart = false;
+    [SerializeField] private GameObject gameStartText;
 
     private int hp;
 
     private void Start()
     {
-        Time.timeScale = 1.0f;
+        Debug.Log("ŠJŽn");
+        Time.timeScale = 0.0f;
     }
 
     void Update()
     {
+        if (!isStart && Input.GetMouseButtonDown(0))
+        {
+            gameStartText.SetActive(false);
+            isStart = true;
+            Time.timeScale = 1.0f;
+        }
+
         GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
         if (blocks.Length == 0)
         {
@@ -32,7 +43,7 @@ public class EventManager : MonoBehaviour
         hp = hpManager.GetHP;
 
         Console.WriteLine(hp);
-        Debug.Log(hp);
+        //Debug.Log(hp);
         if(hp <= 0)
         {
             Time.timeScale = 0;

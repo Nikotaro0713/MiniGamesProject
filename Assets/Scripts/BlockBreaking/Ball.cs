@@ -15,6 +15,7 @@ public class Ball : MonoBehaviour
     bool isStart = false;
     Rigidbody rb;
     AudioSource audioSource;
+    public GameObject gameStartText;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Ball : MonoBehaviour
     {
         if(!isStart && Input.GetMouseButtonDown(0))
         {
+            gameStartText.SetActive(false);
             isStart = true;
             rb.AddForce(new Vector3(1, -1, 0) * speed, ForceMode.VelocityChange);
         }

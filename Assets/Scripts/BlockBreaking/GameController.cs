@@ -9,11 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject gameOverText;
     public GameObject ball;
     public GameObject retryButton;
-
-    void Start()
-    {
-        
-    }
+    public GameObject nextButton;
 
     void Update()
     {
@@ -22,7 +18,7 @@ public class GameController : MonoBehaviour
         {
             gameClearText.SetActive(true);
             ball.GetComponent<Rigidbody>().isKinematic = true;
-            retryButton.SetActive(true);
+            nextButton.SetActive(true);
         }
 
         if(ball.GetComponent<Ball>().isDead == true)
@@ -36,5 +32,10 @@ public class GameController : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Next()
+    {
+        SceneManager.LoadScene("BlockBreaking_2nd");
     }
 }

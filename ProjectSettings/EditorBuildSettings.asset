@@ -4,4 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BlockBreaking_2nd.unity
+    guid: 0af464dccdff73f42a7e9d889749678d
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/BlockBreaking_1st.unity
+    guid: 02d3ed5fa66960d4ca9e68514d4cbef1
+  - enabled: 1
+    path: Assets/Scenes/GameScene2.unity
+    guid: 266e2d8660e4dc546bd8d15900a8a83e
+  m_configObjects: {}
