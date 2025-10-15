@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HpManager : MonoBehaviour
 {
-    public static HpManager Instance;
+    //public static HpManager Instance;
 
     [SerializeField] private int maxHP = 100;
     [SerializeField] private int currentHP;
@@ -17,16 +17,16 @@ public class HpManager : MonoBehaviour
         get { return currentHP; }
     }
 
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+    //private void Awake()
+    //{
+    //    if (Instance != null && Instance != this)
+    //    {
+    //        Destroy(gameObject);
+    //        return;
+    //    }
 
-        Instance = this;
-    }
+    //    Instance = this;
+    //}
     public void TakeDamage(int amount)
     {
         currentHP -= amount;

@@ -8,6 +8,7 @@ public class AttackBall : MonoBehaviour
     public GameObject explosionPrefab;
     public float speed = 3.0f;
     Rigidbody rb;
+    //[SerializeField] HpManager playerHpManager;
 
     private float lastReflectTime = 0f;
     private float reflectCooldown = 0.05f; // 50ミリ秒間は反射無効
@@ -40,7 +41,7 @@ public class AttackBall : MonoBehaviour
         {
             Destroy(this.gameObject);
             // プレイヤーのHPを減らす
-            HpManager.Instance.TakeDamage(10);
+            //playerHpManager.TakeDamage(10);
         }
 
         if(collision.gameObject.name == "Wall_Top")
