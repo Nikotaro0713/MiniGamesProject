@@ -1935,6 +1935,7 @@ GameObject:
   - component: {fileID: 562337983}
   - component: {fileID: 562337982}
   - component: {fileID: 562337981}
+  - component: {fileID: 562337985}
   m_Layer: 0
   m_Name: Wall_Bottom
   m_TagString: Wall
@@ -2028,6 +2029,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 883501776}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &562337985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562337980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc31588688a78ee4ba0b939a93b8fbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHpManager: {fileID: 1935799362}
+  damage: 10
 --- !u!1 &573072296
 GameObject:
   m_ObjectHideFlags: 0

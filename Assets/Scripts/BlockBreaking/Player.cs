@@ -7,6 +7,11 @@ public class Player : MonoBehaviour
     [SerializeField] HpManager playerHpManager;
     [SerializeField] int damage = 10;
 
+    public int GetPlayerHp
+    {
+        get { return playerHpManager.GetHP; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

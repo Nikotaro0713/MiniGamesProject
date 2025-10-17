@@ -7,6 +7,11 @@ public class BossCore : MonoBehaviour
     [SerializeField] private HpManager hpManager;
     [SerializeField] private int damage = 10;
 
+    public int GetBossHp
+    {
+        get { return hpManager.GetHP; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

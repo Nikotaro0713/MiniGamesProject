@@ -54,6 +54,6 @@ public class EventManager : MonoBehaviour
 
     public void Next()
     {
-        sceneSwitcher.LoadScene("TitleScene");
+        sceneSwitcher.LoadScene("BlockBreaking_3rd");
     }
 }

@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossEventManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameClearText;
     [SerializeField] private GameObject gameOverText;
     [SerializeField] private GameObject retryButton;
-    [SerializeField] private HpManager playerHpManager;
-    [SerializeField] private HpManager bossHpManager;
+    [SerializeField] private Player player;
+    [SerializeField] private BossCore boss;
     [SerializeField] private GameObject nextButton;
     [SerializeField] private SceneSwitcher sceneSwitcher;
     private bool isStart = false;
@@ -20,6 +21,8 @@ public class BossEventManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 0.0f;
+        playerHp = player.GetPlayerHp;
+        bossHp = boss.GetBossHp;
     }
 
     void Update()
@@ -31,8 +34,15 @@ public class BossEventManager : MonoBehaviour
             Time.timeScale = 1.0f;
         }
 
-        playerHp = playerHpManager.GetHP;
-        bossHp = bossHpManager.GetHP;
+        if(playerHp > 0)
+        {
+            playerHp = player.GetPlayerHp;
+
+        }
+        if(bossHp > 0)
+        {
+            bossHp = boss.GetBossHp;
+        }
 
         if (playerHp <= 0)
         {
@@ -50,6 +60,18 @@ public class BossEventManager : MonoBehaviour
 
     public void Next()
     {
+        Debug.Log("ƒV[ƒ“‘JˆÚ");
         sceneSwitcher.LoadScene("TitleScene");
+    }
+
+    [ContextMenu("Test Next")]
+    private void TestNext()
+    {
+        Next();
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
