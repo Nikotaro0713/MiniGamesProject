@@ -14,6 +14,7 @@ public class EventManager : MonoBehaviour
     public SceneSwitcher sceneSwitcher;
     private bool isStart = false;
     [SerializeField] private GameObject gameStartText;
+    [SerializeField] private BallController ballController;
 
     private int hp;
 
@@ -30,6 +31,7 @@ public class EventManager : MonoBehaviour
             gameStartText.SetActive(false);
             isStart = true;
             Time.timeScale = 1.0f;
+            ballController.StartFiring();
         }
 
         GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");

@@ -10,6 +10,11 @@ public class BallController : MonoBehaviour
 
     void Start()
     {
+        
+    }
+
+    public void StartFiring()
+    {
         StartCoroutine(FireAlternately());
     }
 
