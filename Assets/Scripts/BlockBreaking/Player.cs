@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             playerHpManager.TakeDamage(damage);
+            FindObjectOfType<DamageEffectController>().ShowDamageEffect();
         }
     }
 }

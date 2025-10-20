@@ -6,6 +6,7 @@ public class BossCore : MonoBehaviour
 {
     [SerializeField] private HpManager hpManager;
     [SerializeField] private int damage = 10;
+    [SerializeField] private GameObject explosionPrefab;
 
     public int GetBossHp
     {
@@ -34,6 +35,8 @@ public class BossCore : MonoBehaviour
         {
             Destroy(collision.gameObject);
             hpManager.TakeDamage(damage);
+            GameObject explosion = Instantiate(explosionPrefab, collision.transform.position, Quaternion.identity);
+            explosion.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         }
     }
 }
