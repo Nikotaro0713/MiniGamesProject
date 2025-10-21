@@ -7,6 +7,8 @@ public class BossCore : MonoBehaviour
     [SerializeField] private HpManager hpManager;
     [SerializeField] private int damage = 10;
     [SerializeField] private GameObject explosionPrefab;
+    [SerializeField] private AudioClip damageSE;
+    AudioSource audioSource;
 
     public int GetBossHp
     {
@@ -16,7 +18,7 @@ public class BossCore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class BossCore : MonoBehaviour
             hpManager.TakeDamage(damage);
             GameObject explosion = Instantiate(explosionPrefab, collision.transform.position, Quaternion.identity);
             explosion.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+            audioSource.PlayOneShot(damageSE);
         }
     }
 }
